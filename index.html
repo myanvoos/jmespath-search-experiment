@@ -8,26 +8,33 @@
 <body>
     <div style="width: 500px;">
         <div style="display: flex; flex-direction: column;">
-            <label>Basic string-matching search:</label>
+            <label>Basic string-matching search (project-level search):</label>
             <input id="search" />
-        </div>
-        <div style="display: flex; flex-direction: column;">
-            <label>Searching for crashed samples only:</label>
-            <input id="crashFilter" />
-        </div>
-        <div style="display: flex; flex-direction: column;">
-            <label>Searching for samples with a certain language only:</label>
-            <input id="langFilter" />
-        </div>
-        <div style="display: flex; flex-direction: column;">
-            <label>Searching for samples with a certain coverage only:</label>
-            <input id="covFilter" />
+            <span style="font-size: smaller;">*Does not work in combination with filters for now</span>
         </div>
 
-        <button>Search!</button>
+        <div style="
+            border-top: solid 20px bisque; 
+            margin-top: 50px; 
+            border-bottom: solid 20px bisque; margin-top: 50px; 
+            padding-bottom: 20px;
+        ">
+            <p> <strong>Filters:</strong> These two filters output benchmark-level data. They can be combined together. </p>
+            <div style="display: flex; flex-direction: column;">
+                <label>Filter for crashed samples only (true/false):</label>
+                <input id="crashFilter" />
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <label>Filter for samples with total_coverage > input number:</label>
+                <input id="covFilter" />
+            </div>
+        </div>
+
+        <button style="margin-top: 20px; padding: 5px;">Search!</button>
     </div>
     
     
 </body>
 <script src=" https://cdn.jsdelivr.net/npm/jmespath@0.16.0/jmespath.min.js "></script>
+<script src="./index.js"></script>
 </html>
