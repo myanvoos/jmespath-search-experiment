@@ -745,6 +745,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log("DOM fully loaded and parsed");
     if (jsonData) {
         setupEventListeners();
+
+        const originalJSONDisplay = document.getElementById('jsonData');
+        originalJSONDisplay.innerHTML = JSON.stringify(jsonData, null, 3);
+
         if (!document.getElementById('resultsDisplay')) {
             const resultsDiv = document.createElement('div');
             resultsDiv.id = 'resultsDisplay';

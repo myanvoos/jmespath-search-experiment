@@ -6,41 +6,55 @@
     <title>Experiment</title>
 </head>
 <body>
-    <div style="
-        border-bottom: dashed 1.5px gray;
-        width: 500px;
-        margin-bottom: 20px;
-    ">
-        <h1>Search/filter with JMESPath</h1>
-        <h4>@myanvoos</h4>
+    <div style="display: flex; margin-left: 50px;">
+        <div>
+            <div style="
+                border-bottom: dashed 1.5px gray;
+                width: 500px;
+                margin-bottom: 20px;
+            ">
+                <h1>Search/filter with JMESPath</h1>
+                <h4>@myanvoos</h4>
+            </div>
+            
+            <div style="width: 500px;">
+                <div style="display: flex; flex-direction: column;">
+                    <label>Basic string-matching search (project-level search):</label>
+                    <input id="search" />
+                    <span style="font-size: smaller;">*Does not work in combination with filters for now</span>
+                </div>
+
+                <div style="
+                    border-top: solid 20px bisque; 
+                    margin-top: 50px; 
+                    border-bottom: solid 20px bisque; margin-top: 50px; 
+                    padding-bottom: 20px;
+                ">
+                    <p> <strong>Filters:</strong> These two filters output benchmark-level data. They can be combined together. </p>
+                    <div style="display: flex; flex-direction: column;">
+                        <label>Filter for crashed samples only (true/false):</label>
+                        <input id="crashFilter" />
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label>Filter for samples with total_coverage > input number:</label>
+                        <input id="covFilter" />
+                    </div>
+                </div>
+
+                <button style="margin-top: 20px; padding: 5px;">Search!</button>
+
+                <div id="resultsDisplay"></div>
+            </div>
+        </div>
+
+        <div style="margin-left: 300px;">
+            <div>
+                Original JSON:
+                <pre id="jsonData"></pre>
+            </div>
+        </div>
     </div>
     
-    <div style="width: 500px;">
-        <div style="display: flex; flex-direction: column;">
-            <label>Basic string-matching search (project-level search):</label>
-            <input id="search" />
-            <span style="font-size: smaller;">*Does not work in combination with filters for now</span>
-        </div>
-
-        <div style="
-            border-top: solid 20px bisque; 
-            margin-top: 50px; 
-            border-bottom: solid 20px bisque; margin-top: 50px; 
-            padding-bottom: 20px;
-        ">
-            <p> <strong>Filters:</strong> These two filters output benchmark-level data. They can be combined together. </p>
-            <div style="display: flex; flex-direction: column;">
-                <label>Filter for crashed samples only (true/false):</label>
-                <input id="crashFilter" />
-            </div>
-            <div style="display: flex; flex-direction: column;">
-                <label>Filter for samples with total_coverage > input number:</label>
-                <input id="covFilter" />
-            </div>
-        </div>
-
-        <button style="margin-top: 20px; padding: 5px;">Search!</button>
-    </div>
     
     
 </body>
